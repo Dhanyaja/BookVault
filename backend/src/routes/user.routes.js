@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { requireAuth } from "../middleware/auth.js";
 import { me } from "../controllers/user.controller.js";
+import { requireAuth } from "../middlewares/auth.js";
 
-const r = Router();
+const ro = Router();
 
-r.get("/me", requireAuth(), me);
-r.get("/admin/ping", requireAuth(["admin"]), (req, res) =>
+ro.get("/me", requireAuth(), me);
+ro.get("/admin/ping", requireAuth(["admin"]), (req, res) =>
   res.json({ ok: true })
 );
 
-export default r;
+export default ro;

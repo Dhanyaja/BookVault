@@ -28,17 +28,6 @@ export const setRefreshCookie = (res, token) => {
     secure: env.COOKIE_SECURE || prod,
     sameSite: prod ? "None" : "Lax",
     path: "/api/auth/refresh",
-    maxAge: parseTtlMs(process.env.REFRESH_TOKEN_TTL || "7d"),
+    maxAge:  7 * 24 * 60 * 60 * 1000,
   });
 };
-
-async function parseTtlMs(ttl) {
-  // naive ms parser via `ms` pkg? we can depend on ms:
-  // but keep a fallback for minutes/hours/days plain numbers
-  try {
-    const ms = (await import("ms")).default;
-    return ms(ttl);
-  } catch {
-    return 7 * 24 * 60 * 60 * 1000;
-  }
-}

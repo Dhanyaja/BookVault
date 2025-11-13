@@ -1,12 +1,10 @@
 import { z } from "zod";
-import { validate } from "../middleware/validate.js";
 import User from "../models/User.js";
 import {
   issueTokens,
   rotateRefresh,
   revokeRefresh,
 } from "../services/token.service.js";
-import { setRefreshCookie } from "../middleware/auth.js";
 import {
   createPasswordResetToken,
   verifyPasswordResetToken,
@@ -15,6 +13,8 @@ import {
   verifyEmailToken,
 } from "../services/auth.service.js";
 import { ok, fail } from "../utils/response.js";
+import { validate } from "../middlewares/validate.js";
+import { setRefreshCookie } from "../middlewares/auth.js";
 
 export const signupSchema = {
   body: z.object({

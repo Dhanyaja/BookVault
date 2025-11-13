@@ -11,6 +11,7 @@ app.get("/", (req, res) => {
   res.send("API running successfully...");
 });
 
+
 await connectDB()
   .then(() => {
     app.listen(port, () =>
