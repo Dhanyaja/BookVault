@@ -19,7 +19,9 @@ app.use(helmet());
 app.use(
   cors({
     // origin: "http://localhost:5173",
-    origin: "https://bookvault-production.up.railway.app/",
+    // origin: "https://bookvault-production.up.railway.app/",
+    origin:
+      "https://book-vault-ozmz-git-main-dhanyajas-projects-9201af3f.vercel.app/",
     credentials: true,
   })
 );
