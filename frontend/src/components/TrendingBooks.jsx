@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { trendingBooks } from "../data/trendingBooks";
+import { trendingBooks } from "../data/TrendingBooks";
 
 const TrendingBooks = () => {
   const scrollRef = useRef(null);
