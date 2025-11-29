@@ -9,7 +9,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { useShelves } from "../context/ShelfContext";
-import { trendingBooks } from "../data/trendingBooks";
 import RecommendedBooks from "../components/RecommendedBooks";
 
 const Dashboard = () => {
