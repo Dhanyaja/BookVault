@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }) => {
   // --------------------------------------------------
   const refreshToken = async () => {
     try {
-      const res = await fetch(`${API}/refresh`, {
+      const res = await fetch(`${API}/auth/refresh`, {
         method: "POST",
         credentials: "include",
       });
