@@ -112,47 +112,10 @@ const ShelfDetails = () => {
       {/* Books Grid */}
       {shelf.books.length > 0 && (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-          {/* {shelf.books.map((book) => (
-            <div
-              key={book.bookId}
-              className="bg-white/10 border border-white/20 rounded-xl p-4 backdrop-blur-xl shadow-lg"
-            >
-              <img
-                src={book.cover ?? "/placeholder-image.avif"}
-                className="w-full h-48 object-cover rounded-lg"
-                alt="Book cover"
-              />
-
-              <h3 className="text-lg mt-3 font-semibold line-clamp-2">
-                {book.title}
-              </h3>
-
-              <p className="text-gray-300 text-sm">{book.author}</p>
-            </div>
-          ))} */}
           {shelf.books.map((item) => {
             const book = item.bookId;
 
             return (
-              // <div
-              //   key={book._id}
-              //   className="bg-white/10 border border-white/20 rounded-xl p-4 backdrop-blur-xl shadow-lg"
-              // >
-              //   <img
-              //     src={book.coverImage || "/placeholder-image.avif"}
-              //     className="w-full h-48 object-cover rounded-lg"
-              //     alt={book.title}
-              //   />
-
-              //   <h3 className="text-lg mt-3 font-semibold line-clamp-2">
-              //     {book.title}
-              //   </h3>
-
-              //   <p className="text-gray-300 text-sm">
-              //     {book.authors?.[0] || "Unknown Author"}
-              //   </p>
-              // </div>
-
               <div
                 key={book._id}
                 className="bg-white/10 border border-white/20 rounded-xl p-4 backdrop-blur-xl shadow-lg cursor-pointer"

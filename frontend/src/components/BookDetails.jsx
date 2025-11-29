@@ -21,36 +21,6 @@ const BookDetails = () => {
     }
   }, [book]);
 
-  // const saveDetails = async () => {
-  //   try {
-  //     const res = await fetch(
-  //       `http://localhost:3000/api/books/${bookId}/progress`,
-  //       {
-  //         method: "PATCH",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //           Authorization: `Bearer ${accessToken}`,
-  //         },
-  //         body: JSON.stringify({
-  //           readingProgress: progress,
-  //           notes,
-  //         }),
-  //       }
-  //     );
-
-  //     const data = await res.json();
-
-  //     if (!res.ok) {
-  //       alert(data.message);
-  //       return;
-  //     }
-  //     console.log("Save details executed");
-  //     alert("Progress updated!");
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
-
   const saveDetails = async () => {
     try {
       const res = await fetch(

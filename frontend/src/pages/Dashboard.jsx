@@ -77,21 +77,6 @@ const Dashboard = () => {
           </button>
         </div>
 
-        {/* USER LIBRARY */}
-        {/* <div className="mb-16">
-          <h2 className="text-3xl font-semibold mb-4">Your Library</h2>
-          <p className="text-gray-400 mb-6">
-            Books you saved will appear here.
-          </p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
-            <div className="h-48 bg-white/10 border border-white/20 rounded-xl flex items-center justify-center">
-              <p className="text-gray-400 text-center">No saved books yet</p>
-            </div>
-          </div>
-        </div> */}
-        {/* User Library */}
-
         {/* ------------------------- */}
         {/*    USER SHELVES SECTION   */}
         {/* ------------------------- */}
@@ -136,57 +121,6 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* RECOMMENDATIONS
-        <div className="mb-12">
-          <h2 className="text-3xl font-semibold mb-4">Recommended for You</h2>
-          <p className="text-gray-400 mb-6">Coming soon...</p>
-
-          <div className="h-48 bg-white/10 border border-white/20 rounded-xl flex items-center justify-center">
-            <p className="text-gray-400 text-center">
-              AI recommendations coming later.
-            </p>
-          </div>
-        </div> */}
-
-        {/* <section className="mt-20 max-w-6xl px-6 relative">
-          <h2 className="text-3xl font-semibold text-center mb-10">
-            Recommended for You
-          </h2>
-          {/* Left Arrow *
-          <button
-            onClick={scrollLeft}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full z-10 cursor-pointer"
-          >
-            <ChevronLeft size={28} />
-          </button>
-          {/* Scroll Container *
-          <div
-            ref={scrollRef}
-            className="flex gap-6 overflow-x-scroll hide-scrollbar scroll-smooth py-4"
-          >
-            {trendingBooks.map((book) => (
-              <div
-                key={book.id}
-                className="min-w-[180px] p-4 rounded-xl shadow hover:scale-105 transition cursor-pointer"
-              >
-                <img
-                  src={book.cover}
-                  alt={book.title}
-                  className="w-full h-60 object-cover rounded-lg"
-                />
-                <h3 className="mt-4 text-lg font-semibold">{book.title}</h3>
-                <p className="text-sm">{book.author}</p>
-              </div>
-            ))}
-          </div>
-          {/* Right Arrow */}
-        {/* <button
-            onClick={scrollRight}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-black/40 text-white p-3 rounded-full z-10 cursor-pointer"
-          >
-            <ChevronRight size={28} />
-          </button>
-        </section> */}
         <RecommendedBooks />
       </div>
     </div>

@@ -12,26 +12,6 @@ const RecommendedBooks = () => {
   const { addBookToShelf, removeBookFromShelf, createShelf, shelves } =
     useShelves();
 
-  // Fetch recommended (fiction / trending) books
-  // useEffect(() => {
-  //   const loadRecommended = async () => {
-  //     try {
-  //       const res = await fetch(
-  //         "http://localhost:3000/api/recommend/recommended"
-  //       );
-
-  //       const data = await res.json();
-  //       setBooks(data.works); // top 12 recommendations
-  //     } catch (error) {
-  //       console.error("Recommendation load error:", error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   loadRecommended();
-  // }, []);
-
   useEffect(() => {
     const loadRecommended = async () => {
       try {
@@ -87,33 +67,6 @@ const RecommendedBooks = () => {
     loadRecommended();
   }, []);
 
-  // Import book into backend
-  // const importBook = async (b) => {
-  //   const body = {
-  //     openLibraryId: b.bookId,
-  //     title: b.title,
-  //     author: b.authors?.[0]?.name || "Unknown Author",
-  //     coverUrl: b.coverUrl,
-  //     publishYear: b.first_publish_year,
-  //     isbn10: b.isbn?.[0],
-  //     isbn13: b.isbn13?.[0],
-  //   };
-
-  //   const res = await fetch("http://localhost:3000/api/books/import", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${accessToken}`,
-  //     },
-  //     credentials: "include",
-  //     body: JSON.stringify(body),
-  //   });
-
-  //   const data = await res.json();
-  //   if (!res.ok) throw new Error(data.message);
-
-  //   return data.bookId;
-  // };
   const importBook = async (b) => {
     const body = {
       openLibraryId: b.bookId,
@@ -163,86 +116,6 @@ const RecommendedBooks = () => {
           ))}
         </div>
       )}
-
-      {/* Book grid */}
-      {/* {!loading && books.length > 0 && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
-          {books.map((b, idx) => {
-            const coverUrl = b.cover_i
-              ? `https://covers.openlibrary.org/b/id/${b.cover_i}-L.jpg`
-              : "/placeholder-book.png";
-
-            return (
-              <div
-                key={idx}
-                className="bg-white/10 border border-white/20 rounded-xl p-4 backdrop-blur-xl 
-                           hover:scale-[1.02] transition cursor-pointer shadow-lg"
-                onClick={() =>
-                  setSelectedBook({
-                    bookId: b.key,
-                    title: b.title,
-                    author: b.author_name?.[0],
-                    coverUrl,
-                  })
-                }
-              >
-                <img
-                  src={coverUrl}
-                  className="w-full h-48 object-cover rounded-lg"
-                />
-                <h3 className="text-lg font-semibold mt-3 line-clamp-2">
-                  {b.title}
-                </h3>
-                <p className="text-gray-300 text-sm">
-                  {b.author_name?.[0] || "Unknown Author"}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-      )} */}
-
-      {/* Horizontal Scroll Row */}
-      {/* {!loading && books.length > 0 && (
-        <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
-          <div className="flex gap-6">
-            {books.map((b, idx) => {
-              const coverUrl = b.cover_i
-                ? `https://covers.openlibrary.org/b/id/${b.cover_i}-L.jpg`
-                : "/placeholder-book.png";
-
-              return (
-                <div
-                  key={idx}
-                  className="min-w-[180px] bg-white/10 border border-white/20 rounded-xl p-4 
-                       backdrop-blur-xl hover:scale-[1.05] transition cursor-pointer shadow-lg"
-                  onClick={() =>
-                    setSelectedBook({
-                      bookId: b.key,
-                      title: b.title,
-                      author: b.author_name?.[0],
-                      coverUrl,
-                    })
-                  }
-                >
-                  <img
-                    src={coverUrl}
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-
-                  <h3 className="text-lg font-semibold mt-3 line-clamp-2">
-                    {b.title}
-                  </h3>
-
-                  <p className="text-gray-300 text-sm">
-                    {b.author_name?.[0] || "Unknown Author"}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )} */}
 
       {/* Carousel Container */}
       {!loading && books.length > 0 && (

@@ -78,13 +78,6 @@ export const listBooks = async (req, res, next) => {
   }
 };
 
-// src/controllers/book.controller.js
-
-// src/controllers/book.controller.js
-
-// Import an external book (OpenLibrary → MongoDB)
-// src/controllers/book.controller.js
-
 import Book from "../models/Book.js";
 
 export const importExternalBook = async (req, res) => {

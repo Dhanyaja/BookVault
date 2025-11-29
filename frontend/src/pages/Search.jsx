@@ -232,12 +232,6 @@ const Search = () => {
           book={selectedBook}
           shelves={shelves}
           onClose={() => setSelectedBook(null)}
-          // onAdd={async (shelfId) => {
-          //   const mongoBookId = await importBook(selectedBook);
-          //   await addBookToShelf(shelfId, mongoBookId); // ✔ valid ID
-          //   alert("Book added to shelf");
-          //   console.log("selected book:", selectedBook);
-          // }}
           onAdd={(shelfId) => handleAddToShelf(shelfId)}
           onRemove={(shelfId) =>
             removeBookFromShelf(shelfId, selectedBook.bookId)
