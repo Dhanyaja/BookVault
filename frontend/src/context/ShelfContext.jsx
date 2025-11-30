@@ -22,7 +22,7 @@ export const ShelfProvider = ({ children }) => {
       );
       console.log("fetch shelves executed");
       const data = await res.json();
-      setShelves(data.data || []);
+      setShelves(data.data || data.shelves ||[]);
     } catch (err) {
       console.error("Fetch shelves error:", err);
     }
@@ -79,7 +79,7 @@ export const ShelfProvider = ({ children }) => {
   const removeBookFromShelf = async (shelfId, bookId) => {
     try {
       const res = await fetch(
-        `https://bookvault-production.up.railway.app/api/shelf/${shelfId}/books/${bookId}`,
+        `https://bookvault-production.up.railway.app/api/shelves/${shelfId}/books/${bookId}`,
         {
           method: "DELETE",
           headers: {
