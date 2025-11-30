@@ -24,7 +24,7 @@ const BookDetails = () => {
   const saveDetails = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/books/${bookId}/progress`,
+        `https://bookvault-production.up.railway.app/api/books/${bookId}/progress`,
         {
           method: "PATCH",
           headers: {
@@ -58,7 +58,7 @@ const BookDetails = () => {
   // Fetch single book from shelf
   const fetchBook = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/shelves/${shelfId}`, {
+      const res = await fetch(`https://bookvault-production.up.railway.app/api/shelves/${shelfId}`, {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
 
@@ -85,7 +85,7 @@ const BookDetails = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/api/shelves/${shelfId}/books/${bookId}`,
+        `https://bookvault-production.up.railway.app/api/shelves/${shelfId}/books/${bookId}`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${accessToken}` },
