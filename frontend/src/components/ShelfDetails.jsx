@@ -13,7 +13,7 @@ const ShelfDetails = () => {
 
   const fetchShelf = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/shelves/${shelfId}`, {
+      const res = await fetch(`https://bookvault-production.up.railway.app/api/shelves/${shelfId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -33,7 +33,7 @@ const ShelfDetails = () => {
     if (!window.confirm("Are you sure you want to delete this shelf?")) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/api/shelves/${shelfId}`, {
+      const res = await fetch(`https://bookvault-production.up.railway.app/api/shelves/${shelfId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${accessToken}`,

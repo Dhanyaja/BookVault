@@ -16,7 +16,7 @@ const RecommendedBooks = () => {
     const loadRecommended = async () => {
       try {
         const res = await fetch(
-          "http://localhost:3000/api/recommend/recommended"
+          "https://bookvault-production.up.railway.app/api/recommend/recommended"
         );
         const data = await res.json();
 
@@ -75,7 +75,7 @@ const RecommendedBooks = () => {
       coverUrl: b.coverUrl,
     };
 
-    const res = await fetch("http://localhost:3000/api/books/import", {
+    const res = await fetch("https://bookvault-production.up.railway.app/api/books/import", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
